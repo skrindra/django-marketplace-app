@@ -136,6 +136,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# collect static files for deployment, this includes the 
+# default django css too
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 
 # Default primary key field type
@@ -159,3 +163,7 @@ LOGIN_URL = '/login/'
 #  --> The above line is not needed if static directory exists in any of the apps, django will automatically search for the static directory in each of the apps
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
+
+
+# for automatically appending a trailing slash to URLs that don't have one
+APPEND_SLASH = True
